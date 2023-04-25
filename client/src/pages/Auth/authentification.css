@@ -1,0 +1,181 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+  }
+  
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wrapper p{
+    font-size: 14px;
+  }
+  
+  .loginPage{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .loginPage .wrapper{
+    background-color: #e2ea9b;
+    height: 60vh;
+    width: 25%;
+    border-radius: 1rem;
+  }
+  .loginPage img {
+    height: 0%;
+    width: 0%;
+    display: none;
+  }
+  
+  @media (min-width : 900px){
+    .loginPage img {
+        height: 30%;
+        width: 30%;
+        object-fit: cover;
+        display: block;
+      }
+  }
+
+.blur{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.768);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+
+.wrapper2{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 900;
+  background: rgb(255, 255, 255);
+  height: 80vh;
+  width: 30%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+
+.icon{
+  position: relative;
+  height: 25px;
+}
+
+.birthday{
+  display: flex;
+  justify-content: space-around;
+  height: 30px;
+  
+  width: 50%;
+}
+.select{
+  width: 26px;
+  height: 26px; 
+}
+.loginPage{
+  background-image: url("./univers.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pop{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+.pop i{
+  font-size: 30px;
+}
+
+.errorDiv{
+  width: 90%;
+  margin: 0 auto;
+  margin: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  text-align: center;
+  background-color: #ffaeae;
+  border-radius: 0.3rem;
+}
+.successDiv{
+  background-color: #a9ff81;
+}
+ 
+.Loading{
+  height: 34px;
+  width: 34px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
