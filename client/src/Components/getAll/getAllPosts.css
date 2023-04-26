@@ -1,0 +1,111 @@
+.post{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 90%;
+    margin: auto;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.headerPost{
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+.headerPost .infosP{
+    display : flex;
+    align-items : center;
+    justify-content : left;
+    padding: 0.7rem 1rem;
+}
+.headerPost img{
+    margin-right: 0.7rem;
+    height: 46px;
+    object-fit: cover;
+    width: 46px;
+    border-radius: 50%;
+}
+
+.fa-ellipsis-vertical{
+    position: absolute;
+    right: 1.4rem;
+    font-size: 1.4rem;
+}
+.textPost{
+    min-height: 40px;
+    text-align: left;
+    padding: 0 1.3rem;
+    align-items: center ;
+}
+.imagePost{
+    width: 100%;
+    height: 360px;
+    padding :0  1.3rem;
+    border-radius: 0.7rem;
+}
+.imagePost img{
+    object-fit: cover;
+    height: 360px;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.footerPo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.fot1{
+    display: flex;
+    justify-content: space-between;
+    padding:  0 1.3rem;
+    position: relative;
+    height: 30px;
+    width: 100%;
+}
+
+.commentsNumber{
+    top: 4px;
+    position: absolute;
+    right: 2rem;
+    font-size: 14px;
+}
+.likesNmbers{
+    top: 4px;
+    position: absolute;
+    font-size: 14px;
+    left: 2rem;
+}
+
+.fot2{
+    position: relative;
+    display: flex;
+    height: 30px;
+}
+.comment{
+    width: 250px;
+    margin: 0 2rem;
+
+}
+.like{
+    margin: 0 2rem;
+    width: 250px;
+}
+.fot2 button{
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+}
+.fot2{
+    margin-bottom: 0.5rem;
+}
+
+.liked{
+    background-color: rgb(72, 216, 72);
+}
+
+
+
+
+
+
+
