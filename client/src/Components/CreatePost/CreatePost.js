@@ -4,10 +4,20 @@ import photo from './photo.png';
 import happy  from './happy.png'
 import akram from './akram.jfif';
 import {useRef, useState} from "react";
+import Cookies from 'js-cookie';
+import axios from 'axios';
 import useClickOutsideToHideElement from '../../helpers/clickOutsideToHide';
 
 const CreatePost = () => {
  
+
+    //states
+    const [isLoading, setisLoading] = useState(false);
+    const [data, setData] = useState({
+        text : "", 
+        image : ""
+    });
+
     const [popUp, setPopUp] = useState();
     //referencing the element so that we hide it when we click outside it 
     const element = useRef(null);
@@ -37,6 +47,61 @@ const CreatePost = () => {
         }
     }
  
+
+    const [photoClick, setClickP] = useState()
+    const handelPhotoClick = ()=>{
+        if(photoClick){
+            setClickP(false);
+        }
+        else{
+            setClickP(true);
+        }
+    }
+
+    //fucntion handle change of inputs 
+    const handleChange = (e)=>{
+        setData({
+            ...data, 
+            [e.target.name] : e.target.value
+        })
+    }
+ 
+    //get user
+    const user = JSON.parse(Cookies.get('user'));
+    //console.log(user);
+
+    //function handleCreateSbmit
+    const handleCreateSbmit =async (e)=>{
+        e.preventDefault();
+        try{
+            //setIsLoading(true)
+            setisLoading(true) 
+
+            const token = user.token;
+
+            const dataModified = {
+                user : user._id, 
+                text : data.text, 
+                image : data.image
+            }
+
+            const resp = await axios.post('http://localhost:3001/post/create', dataModified, {headers :{
+                Authorization : `Bearer ${token}`
+            } }); 
+            if(resp){
+                setisLoading(false);
+                setPopUp(false);
+            }
+        }
+        catch(e){
+            setisLoading(false);
+            console.log(e.message);
+        }
+    }
+
+
+    
+
  
     return (
     <div className='createContainer'>
@@ -56,17 +121,25 @@ const CreatePost = () => {
                             </div>
                             <span>Akram Elbasri</span>
                         </div>
+                        <form onSubmit={handleCreateSbmit} >
                         <div className="bodySlice3">
-                            <textarea placeholder="What's on your mind, Akram" name="woum" id="" cols="30" rows="10" ></textarea>
+                            <textarea name='text' placeholder="What's on your mind, Akram"  cols="30" rows="10" onChange={handleChange}  />
                          </div>
-                         <div className="opop">
-                        <div className="options gh1">
+                         {
+                            photoClick && (<div>
+                                <div className="DIVDIV">
+                                <input  onChange={handleChange} className="inputURL" type="text" name="image" placeholder="Please enter URL of your image/video" />
+                                </div>
+                            </div> )
+                         }
+                         <div className={photoClick? "opop popop" : "opop"}>
+                        <div className="options gh1"  onClick={handelPhotoClick}>
                             <img src={live} alt="" />
                             <div className="spansis">
                             <span>Live Video</span>
                              </div>
                         </div>
-                        <div className="options gh1">
+                        <div className="options gh1" onClick={handelPhotoClick}>
                             <img src={photo} alt="" />
                             <div className="spansis">
                             <span>Photo/video</span>
@@ -80,8 +153,9 @@ const CreatePost = () => {
                         </div>
                         </div>
                         <div className="butt">
-                        <button>Create</button>
+                        <button type="submit">Create</button>
                         </div>
+                        </form>
                     </div>
                     
                 </div>
