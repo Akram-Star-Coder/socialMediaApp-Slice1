@@ -1,9 +1,9 @@
 import "./Profile.css";
-
+import Header from '../../Components/Header/header';
 const Profile = () => {
   return (
     <div>
-      <h1>Profile Page</h1>
+      <Header />
     </div>
   )
 }

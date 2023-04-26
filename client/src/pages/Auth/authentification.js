@@ -1,18 +1,14 @@
 import './authentification.css';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {Link} from 'react-router-dom';
 import axios  from "axios";
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-import {useDispatch} from 'react-redux';
 import { ReactComponent as LoadingIcon } from './Spinner-1s-200px.svg';
-
+import useClickOutsideToHideElement from '../../helpers/clickOutsideToHide';
 
 const OTHO = () => {
   
-  //fct useDispatch
-  const dispatch = useDispatch();
-
 
   //state of cancel the pop up window 
   const [popUp, setPopUp] = useState(false);
@@ -41,6 +37,7 @@ const OTHO = () => {
 
   //state of loading 
   const [Loading, setLoading] = useState(false);
+  const [LoadingL, setLoadingL] = useState(false);
 
   //declaration of sueNavigate
   const navigate =  useNavigate();
@@ -90,7 +87,7 @@ const OTHO = () => {
     setregisterData({
       ...registerData, 
       [e.target.name] : e.target.value
-    })
+    }) 
   }
   const handleSubmit1 = async (e)=>{
     e.preventDefault();
@@ -111,7 +108,7 @@ const OTHO = () => {
             setPopUp(false);
           }, 2000);
           //insert data inside the Redux Store
-          dispatch({type:"LOGIN", payload:resp.data})
+          //dispatch(register(registerData.firstName, registerData.lastName, registerData.email, registerData.password, registerData.gender, registerData.birthdayMonth, registerData.birthdayDay, registerData.birthdayYear));
           //insert data in cookies
           Cookies.set('user', JSON.stringify(resp.data))
           
@@ -153,6 +150,16 @@ const OTHO = () => {
       setSuccessL('');
     }
   }
+  //referencing the element so that we hide it when we click outside it 
+  const element = useRef(null);
+  useClickOutsideToHideElement(element,()=>{
+    if(popUp){
+      setPopUp(false)
+    }
+    else{
+      setPopUp(true)
+    }
+  })
 
 
 
@@ -160,27 +167,27 @@ const OTHO = () => {
     e.preventDefault();
     try{
       setErrorL('');
-      setLoading(true);
+      setLoadingL(true);
       if(loginData){
         const resp = await axios.post("http://localhost:3001/auth/login", loginData);
         if(resp){
 
           setErrorL('');
-          setLoading(false);
+          setLoadingL(false);
           setSuccessL('Loggedin Successfully');
           console.log(resp.data);
           setTimeout(function() {
-            navigate('/')
+            navigate(0);
           }, 1500); 
           //insert data inside the Redux Store
-          dispatch({type:"LOGIN", payload:resp.data})
+          //dispatch(login(loginData.email, loginData.password, resp.data.token));
           //insert data in cookies
           Cookies.set('user', JSON.stringify(resp.data))
         }
       }
     }
     catch(err){
-        setLoading(false);
+        setLoadingL(false);
        if(err.response.status === 400){
         setSuccessL('');
         setErrorL('Invalid credentials');
@@ -199,19 +206,15 @@ const OTHO = () => {
 
   return (
     <>
-    <div className="loginPage">
-          
-          
-          
+    <div className="loginPage">  
           <img src="https://static.vecteezy.com/ti/vecteur-libre/p3/5879539-cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-vector-illustration-avec-scene-de-personnes-isolees-gratuit-vectoriel.jpg" alt="" />
-          
           <div className="wrapper">
             <h1>Login</h1>
             {
               errorL && (<div className='errorDiv'><span>{errorL}</span></div>)
             }
             {
-              Loading && (<div className="LoadingSVG">
+              LoadingL && (<div className="LoadingSVG">
                 <LoadingIcon className="Loading"/>
               </div>)
             }
@@ -225,22 +228,22 @@ const OTHO = () => {
             </form>
             <p>No account ? <button onClick={handlePopup}>Sign In</button></p>
             <p><Link  to='/createPage'>Create a page</Link> for a celebrity, brand or business.</p>
-
           </div>
- 
-      
-     
           {
             popUp && (
-              <div className="blur">
-                
-                <div className="wrapper2 ">
+              <div  className="blur">
+                <div ref={element} className="wrapper2 ">
                   <div className="icon">
                     <button  onClick={handlePopup}  className='pop'><i className="fa-solid fa-xmark"></i></button>
                   </div>
                   <h1>Register</h1>
                   {
                     error && (<div className='errorDiv'><span>{error}</span></div>)
+                  }
+                  {
+                  Loading && (<div className="LoadingSVG">
+                    <LoadingIcon className="Loading"/>
+                  </div>)
                   }
                   {
                     success && (<div className='errorDiv successDiv'><span>{success}</span></div>)

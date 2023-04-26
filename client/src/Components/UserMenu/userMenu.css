@@ -1,0 +1,124 @@
+.Usermenu{
+    position: absolute;
+    top: 96%;
+    right: 10px;
+    width: 330px;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem  1rem ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.imageProfile{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.imageProfile img{
+    height: 50px;
+    width :50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.nameUser{
+    display: flex;
+    align-items: center;
+    height: 55px;
+}
+.imageProfile{
+    margin-right: 0.7rem;
+    color: black;
+    font-weight: bold;
+}
+.firstNameUser{
+    margin-right: 0.3rem;
+    color: black;
+    font-weight: bold;
+}
+.lastNameUser{
+    margin-right: 0.3rem;
+    color: black;
+    font-weight: bold;
+}
+
+
+.nameUser{
+    margin-bottom: 1rem;
+}
+.hrhr{
+    height: 2px;
+}
+.lineHRCustomized{
+    background-color: rgb(204, 204, 204);
+    height: 1px;
+    width: 71%;
+    margin: 0 auto;
+}
+.linkBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feedback{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: black;
+    border-radius: 5rem;
+    transition: 0.3s all ease-in-out;
+    margin-top: 0;
+    margin-bottom: 1px;
+}
+.feedback:hover{
+    background-color: rgb(238, 238, 238);
+}
+.feedback button{
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    margin-right: 0.6rem;
+}
+
+.spans{
+    display: flex;
+    flex-direction: column;
+}
+
+.helpus{
+    font-size: 12px;
+}
+.akak{
+    border: none;
+    outline: none;
+    border-radius: 3rem;
+    height: 1px;
+}
+.cll{
+    display: flex;
+    padding: 1px;
+}
+
+
+.see{
+    position: absolute;
+    top: 24%;
+    left: 23.5%;
+    font-size: 13px;
+    cursor: default;
+}
+.kaka{
+    position: relative;
+    bottom: 45px;
+    color: rgb(255, 255, 255);
+    right: -284px;
+    font-size: 1.5rem;
+}
+
+.settignAndPrivacy{
+    cursor: pointer;
+}
+
