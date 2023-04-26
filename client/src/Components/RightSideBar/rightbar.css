@@ -65,17 +65,22 @@
     margin-top: 0.7rem;
     margin-bottom: 0;
     padding: 0.7rem;
+    border-radius: 0.7rem;
     background-image: linear-gradient(#d503ff, #02e1ff);;
+    transition: 0.3s all ease-in-out;
+}
+.wrpT img:hover{
+    transform: scale(1.1);
 }
 .wrpT img{
     height: 100%;
     width: 100%;
+    cursor: pointer;
     object-fit: cover;
-    border-radius: 0.8rem;
+    border-radius: 0.7rem;
 }
 
 .titleR h2 {
-
     font-size: 25px;
     background: -webkit-linear-gradient(#d503ff, #00bbff);
     -webkit-background-clip: text;
@@ -83,13 +88,16 @@
 }
 .wrapperX{
     margin-top: 1rem;
-    font-size: 14px;
-    height: 22px;
+    font-size: 13px;
+    height: 20px;
     background-color: rgb(220, 220, 220);
     width: 90px;
     border-radius: 2rem;
-    text-align: center;
-    
+    text-align: center; 
+    margin-bottom: 0.2rem;
+}
+.rightBar{
+    height: 150vh;
 }
 
 

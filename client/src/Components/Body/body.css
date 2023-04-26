@@ -1,6 +1,0 @@
-.body{
-    min-height: calc(100vh - 56px);
-    width: 100%;
-    display: flex;
-    background-color: rgb(255, 255, 255);
-}

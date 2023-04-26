@@ -1,3 +1,160 @@
 .Leftbar{
-    flex: 4;
+    flex: 2.6; 
+    overflow: hidden;
+    overflow-y: scroll;
+    height: calc(100vh - 56px);
+    position: sticky;
+    top: 56px;
+    bottom: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 100%;
 }
+
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  width: 7px;
+}
+
+/* Hide scrollbar when not hovering */
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #ebebeb;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Style the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: #eeeeee;
+}
+.im{
+  height: 37px;
+  width: 37px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+.im img{
+  height: 30px;
+  width: 30px;
+}
+.slice{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 0.7rem;
+  width: 80%;
+  padding-left: 0.2rem;
+}
+.slice:hover{
+  background-color: #e7e7e7;
+  border-radius: 3rem;
+}
+
+
+.slice1{
+
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0.2rem;
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+.slice2{
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.titleK{
+  margin: 0 auto;
+  cursor: default;
+  width: 100px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #dfdfdf;
+  height: 20x;
+  border-radius: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.titleK span{
+  text-align: center;
+}
+
+.friendsContainer{
+  padding: 0 0.5rem;
+}
+.imgaeFriends{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgaeFriends img{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.friend{
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.friend .imgaeFriends{
+  margin-right: 0.3rem;
+}
+.friendsContainer{
+  color: black;
+  font-size: 15px;
+}
+
+.friend{
+  margin-bottom: 1.6rem;
+}
+
+
+.hrhrhr{
+ 
+  width: 60%;
+  outline: none;
+  border: none;
+  background-color: grey;
+  height: 1px;
+  border-radius: 3rem;
+  margin: 0 auto ;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

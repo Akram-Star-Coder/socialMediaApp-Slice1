@@ -273,7 +273,7 @@ button{
 
 .green{
     transition: 0.3s all ease-in-out;
-    background-color: rgb(158, 249, 155);    
+    background-color: rgb(255, 134, 247);    
     z-index: 10;
 }
 .green i{

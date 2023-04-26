@@ -1,6 +1,6 @@
 import './rightbar.css'
 import pizza from './pizzaAds.png';
-
+import {Link} from 'react-router-dom' 
 
 const Rightbar = () => {
   return (
@@ -10,10 +10,10 @@ const Rightbar = () => {
             <span>Sponsored</span>
         </div>
 
-        <div className="wrapperR wrpT"> 
+        <Link to="/" className="wrapperR wrpT"> 
             <img src={pizza} alt="" />
-        </div>
-        
+        </Link>
+         
         <div className="wrapperR">
             <div className="titleR">
                 <h2>Create</h2>

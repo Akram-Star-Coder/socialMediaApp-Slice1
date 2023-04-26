@@ -5,7 +5,7 @@
     width: 330px;
     border-radius: 1rem;
     background-color: rgb(255, 255, 255);
-    padding: 2rem  1rem ;
+    padding: 2rem 3.5rem ;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -105,8 +105,8 @@
 
 .see{
     position: absolute;
-    top: 24%;
-    left: 23.5%;
+    top: 24.5%;
+    left: 35.3%;
     font-size: 13px;
     cursor: default;
 }
@@ -114,11 +114,10 @@
     position: relative;
     bottom: 45px;
     color: rgb(255, 255, 255);
-    right: -284px;
+    right: -245px;
     font-size: 1.5rem;
 }
 
 .settignAndPrivacy{
     cursor: pointer;
 }
-
