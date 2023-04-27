@@ -12,13 +12,13 @@ function App() {
   
   
   const user = (Cookies.get('user'));
-
+ 
   return(
     <>
       <BrowserRouter>
         <Routes>
         <Route path='/auth' element={ user? <Navigate to='/' /> : <OTHO />  } exact />
-        <Route path='/profile' element={ user ? <Profile  /> : <Navigate to='/' /> } exact />
+        <Route path='/profile/:id' element={ user ? <Profile  /> : <Navigate to='/' /> } exact />
         <Route path='/about' element={ user ? <About  />  : <Navigate to='/' /> } exact />
         <Route path='/contact' element={ user? <Contact  /> : <Navigate to="/" /> } exact />
         <Route path='/groups' element={ user ? <Group  /> : <Navigate to="/" /> } exact />

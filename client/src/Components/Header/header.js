@@ -7,7 +7,8 @@ import { useLocation } from "react-router-dom";
 import UserMenu from '../UserMenu/userMenu';
 import men from './profile.png';
 import women from './profileFemale.png';
-const Header = ({user}) => {
+import Cookies from 'js-cookie';
+const Header = () => {
 
 
     /** 
@@ -21,6 +22,7 @@ const Header = ({user}) => {
      * 
      * **/
 
+    const user = JSON.parse(Cookies.get('user'));
 
 
     const location = useLocation();
@@ -108,7 +110,7 @@ const Header = ({user}) => {
                 
                 <div  className= "imagePlusName">
                     <div className="concon">
-                        <Link to="/profile" className="image">
+                        <Link to={`/profile/${user._id}`} className="image">
                         
                         {
                             user.picture ? (<img src={user.picture} alt="" />                    
@@ -121,7 +123,7 @@ const Header = ({user}) => {
                             
                         </Link>
                     </div>
-                    <Link   to="/profile" className={path === 'profile'? "firstNameModified" : "firstName" }>
+                    <Link   to={`/profile/${user._id}`} className={path === 'profile'? "firstNameModified" : "firstName" }>
                         <span>{user.firstName}</span>
                     </Link>
                 </div>

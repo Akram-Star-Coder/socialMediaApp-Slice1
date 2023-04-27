@@ -1,0 +1,102 @@
+
+.profile{
+    display: flex;
+}
+.profileInfos{
+    flex: calc(12 - 2.6);
+}
+.coverP{
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg");
+    height: 220px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.pictureUser{
+    height: 121px;
+    width: 121px;
+    display: flex;
+    position: absolute;
+    right: 44%;
+    top: 70%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+}
+.pictureUser img{
+    height: 115px;
+    width: 115px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.fullnamePROFILE{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    height: 80px;
+    margin-top: 50px;
+}
+.fullnamePSpan{
+    font-size: 1.17rem;
+    font-weight: bold;
+}
+.descriptioNprofile{
+    color: rgb(106, 106, 106);
+    font-size: 0.85rem;
+}
+
+.hrProfile{
+    width: 50px;
+    border: 1px solid rgb(194, 194, 194);
+    color: rgb(210, 210, 210);
+    background-color: rgb(208, 208, 208);
+    height: 1.5px;
+    margin: 0.3rem 0;
+    outline: none;
+    border-radius: 3rem;
+}
+.loading{
+    flex: calc(12 - 2.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loadingIconProfile{
+    height: 130px;
+    width: 130px;
+}
+
+.editProfile{
+    position: absolute;
+    top: -2rem;
+    right: 1.5rem;
+}
+.deleteProfile{
+    position: absolute;
+    top: 0.3rem;
+    right: 1.5rem;
+}
+.deleteProfile button , .editProfile button{
+    width: 120px;
+    height: 30px;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+}
+.deleteProfile button{
+    background-color: rgb(252, 176, 176);
+}
+.editProfile button{
+    background-color: rgb(169, 251, 166);
+}
+.deleteProfile button:hover{
+    background-color: rgb(255, 67, 67);
+}
+.editProfile button:hover{
+    background-color: rgb(91, 253, 86);
+}
+

@@ -26,10 +26,18 @@
     border-radius: 50%;
 }
 
-.fa-ellipsis-vertical{
+.fa-ellipsis-verticalBTN{
     position: absolute;
     right: 1.4rem;
     font-size: 1.4rem;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-image:  linear-gradient( 40deg,  #d008eb 30%, #0479ff 70% );}
+.fa-ellipsis-verticalBTN i{
+    color: rgb(255, 255, 255);
 }
 .textPost{
     min-height: 40px;
@@ -103,9 +111,56 @@
     background-color: rgb(72, 216, 72);
 }
 
+.createdAt{
+    font-size: 12px;
+    margin-left: 0.8rem;
+}
 
+.menuPost{
+    position: absolute;
+    top: 82%;
+    right: 2%;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 170px;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem 0.3rem;
+}
+.row1savePost{
+    color: black;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-left: 0.4rem;
+}
+.row1savePost .btnSave{
+    height: 40px;
+    width: 40px;
+    background-color: rgb(225, 225, 225);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+.span31{
+    font-size: 15px;
+}
+.span32{
+    font-size: 11px;
+}
 
-
-
+.infosSave{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.65rem;
+}
 
 

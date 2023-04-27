@@ -7,11 +7,13 @@ import men from './userpicture.png';
  
     const UserMenu = ({user}) => {
 
+
+
     const element = useRef(null);
-    //function to fide an element
     useClickOutsideToHideElement(element, ()=>{
         element.current.style.display = "none";
     })
+    
     
     const nav = useNavigate();
     const LOGOUT = () => {

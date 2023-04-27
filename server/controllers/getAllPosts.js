@@ -4,7 +4,7 @@ const posts = require('../models/posts');
 const getAllPosts = async (req, res) => {
     try{
         
-        const isCreated = await posts.find();
+        const isCreated = await posts.find().sort({ createdAt: -1 });;
         if(isCreated){
             res.status(200).json(isCreated);
         }
