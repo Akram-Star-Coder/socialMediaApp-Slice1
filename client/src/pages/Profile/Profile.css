@@ -1,24 +1,30 @@
 
 .profile{
     display: flex;
+    min-height: 90vh;
 }
 .profileInfos{
     flex: calc(12 - 2.6);
 }
 .coverP{
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg");
-    height: 220px;
+    height: 233px;
+}
+.coverP .imageCOCO{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
     position: relative;
 }
+
 .pictureUser{
     height: 121px;
     width: 121px;
     display: flex;
     position: absolute;
-    right: 44%;
-    top: 70%;
+    right: 34.4%;
+    top: 36%;
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -38,6 +44,7 @@
     position: relative;
     height: 80px;
     margin-top: 50px;
+    margin-bottom: 2rem;
 }
 .fullnamePSpan{
     font-size: 1.17rem;
@@ -88,11 +95,15 @@
     outline: none;
 }
 .deleteProfile button{
-    background-color: rgb(252, 176, 176);
+    background-color: rgb(251, 145, 145);
 }
 .editProfile button{
-    background-color: rgb(169, 251, 166);
+    background-color: rgb(165, 255, 162);
 }
+
+
+
+
 .deleteProfile button:hover{
     background-color: rgb(255, 67, 67);
 }
@@ -100,3 +111,344 @@
     background-color: rgb(91, 253, 86);
 }
 
+.userInfos{
+    display: flex;
+}
+
+.ui2{
+    flex: 2.5;
+    cursor: default;
+    margin-bottom: 3rem;
+}
+
+.emailp{
+    display: flex;
+    margin-bottom: 1.3rem;
+
+}
+.optionp{
+    width: 64px;
+    background-color: rgb(226, 226, 226);
+    height: 22px;
+    border-radius: 3rem;
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.3rem;
+}
+.optionpvalue{
+    font-size: 15px;
+}
+
+.containerui2{
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.containerui2 h2{
+    margin-top: 0.5rem;
+    font-size: 1.35rem;
+    margin-bottom: 3rem;
+}
+
+.following{
+    margin-right: 2.3rem;
+}
+.following2{
+    margin-right: 1rem;
+}
+
+
+.ui1{
+    flex: 6.9;
+    position: relative;
+}
+.ememe{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    color: rgb(0, 0, 0);
+}
+.ememe i{
+    color: rgb(163, 10, 251);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+.poststst{
+    width :90%;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 530px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 2rem;
+}
+.postststXXX{
+    width :90%;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 180px;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 2rem;
+}
+.lodinin{
+    height: 88px;
+    width: 88px;
+    margin-bottom: 40rem;
+    margin-top: 4rem;
+
+}
+
+.imageProfileUserx{
+    height : 90px;
+    width: 93%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.imageProfileUserx img{
+    object-fit: cover;
+    height: 47px;
+    width: 47px;
+    border-radius: 50%;
+}
+.jijiSpanos{
+    font-size: 15px;
+    margin-left: 0.5rem;
+}
+
+.fullnamepos{
+    display: flex;
+    align-items: center;
+}
+.postuniquecreatedAt em{
+    font-size: 13px;
+    color: rgb(100, 100, 100);
+}
+.postuniquecreatedAt{
+    margin-left: 2rem;
+}
+.imagePUnsui{
+    height: 350px;
+    width: 93%;
+    margin: 0 auto;
+}
+.imagePUnsui img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+.context{
+    min-height: 30px;
+    width: 93%;
+    padding: 0 0.3rem;
+    margin: 0 auto;
+    margin-bottom: 0.2rem;
+}
+
+
+
+.footerPo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.fot1{
+    display: flex;
+    justify-content: space-between;
+    padding:  0 1.3rem;
+    position: relative;
+    height: 30px;
+    width: 100%;
+}
+
+.commentsNumber{
+    top: 4px;
+    position: absolute;
+    right: 2rem;
+    font-size: 14px;
+}
+.likesNmbers{
+    top: 4px;
+    position: absolute;
+    font-size: 14px;
+    left: 2rem;
+}
+
+.fot2{
+    position: relative;
+    display: flex;
+    height: 30px;
+}
+.comment{
+    width: 250px;
+    margin: 0 2rem;
+
+}
+.like{
+    margin: 0 2rem;
+    width: 250px;
+}
+.fot2 button{
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+}
+.fot2{
+    margin-bottom: 0.5rem;
+}
+
+.liked{
+    background-color: rgb(72, 216, 72);
+}
+.imageProfileUserx{
+    position: relative;
+}
+
+.btnOptionsDelete{
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 5.5rem;
+}
+.btnOptionsDelete button{
+    margin-left: 1rem ;
+    outline: none;
+    border: none;
+    height: 27px;
+    width: 90px;
+    border-radius: 0.3rem;
+}
+.deletePost{
+    background-color:rgb(251, 145, 145);
+}
+.editPost{
+    background-color:rgb(165, 255, 162);
+}
+.deletePost:hover{
+    background-color: rgb(255, 67, 67);
+}
+.editPost:hover{
+    background-color: rgb(91, 253, 86);
+}
+
+.menuPost{
+    position: relative;
+    
+    right: 2%;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 170px;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2rem 0.3rem;
+    z-index: 999;
+}
+
+
+
+.deletePostPOPUP{
+    position: absolute;
+    right: 20%;
+    top: 119%;
+    overflow: hidden;
+    width: 220px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 170px;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 999;
+}
+.dangerZone{
+    margin-top: 0.4rem;
+    height: 49px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.dangerZone span{
+    height: 28px;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 0.2rem;
+    border-radius: 5rem;
+    background-color: rgb(223, 223, 223);
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+}
+
+
+.areusure{
+    background-color: none;
+    font-size: 15px;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+.deletedefinitely{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.deletedefinitely button{
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(247, 134, 134);
+    color: white;
+}
+.deletedefinitely button:hover{
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgb(219, 54, 54);
+    color: white;
+}
+
+.editPostPOPUP{
+    position: absolute;
+    right: -29%;
+    top: 119%;
+    overflow: hidden;
+    width: 220px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 170px;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 999;
+}
+
+.cqsjnx{
+    height: 69px;
+    width: 69px;
+}
+.containerofLoading{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

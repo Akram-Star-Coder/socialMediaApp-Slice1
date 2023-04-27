@@ -1,0 +1,21 @@
+.groupBody{
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.loadingINFINITY{
+    height: 109px;
+    width: 109px;
+}
+
+.groupBody span{
+    position: absolute;
+    top: 55%;
+    font-size: 15px;
+    color: rgb(204, 5, 253);
+}
+

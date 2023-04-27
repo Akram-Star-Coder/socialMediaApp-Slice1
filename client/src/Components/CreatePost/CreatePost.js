@@ -117,13 +117,13 @@ const CreatePost = () => {
                         
                         <div className="bodySlice2">
                             <div className="imggg">
-                                <img src={akram} alt="" />
+                                <img src={user.picture ? user.picture : "https://cdn-icons-png.flaticon.com/512/149/149071.png"} alt="" />
                             </div>
-                            <span>Akram Elbasri</span>
+                            <span>{user.firstName+' '+user.lastName}</span>
                         </div>
                         <form onSubmit={handleCreateSbmit} >
                         <div className="bodySlice3">
-                            <textarea name='text' placeholder="What's on your mind, Akram"  cols="30" rows="10" onChange={handleChange}  />
+                            <textarea name='text' placeholder={`What's on your mind, ${user.firstName}`}  cols="30" rows="10" onChange={handleChange}  />
                          </div>
                          {
                             photoClick && (<div>
@@ -164,8 +164,8 @@ const CreatePost = () => {
         }
         <div className="createc2">
             <div className="slice1Create" onClick={handleClickInputToShowPopupWindow} >
-                <img  src="https://media.licdn.com/dms/image/D4E03AQHDKXFWtgSO1Q/profile-displayphoto-shrink_400_400/0/1675566442061?e=1687392000&v=beta&t=qBAucY6YH3tYd1H57Ye7WO8rtfrcV8ZkjPIOvP-LJ1I" alt="" />
-                <input disabled  type="text" placeholder="What's on your mind, Akram " />
+                <img  src={user.picture ? user.picture : "https://cdn-icons-png.flaticon.com/512/149/149071.png"} alt="" />
+                <input disabled  type="text" placeholder={`What's on your mind, ${user.firstName}`} />
             </div>
             <hr />
             <div className="slice2create">

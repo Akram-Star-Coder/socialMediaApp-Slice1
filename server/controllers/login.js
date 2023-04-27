@@ -24,7 +24,7 @@ const login = async (req, res) => {
                     }, 
                     process.env.tokenPass,
                     {
-                        expiresIn : "24h" 
+                        expiresIn : "100d" 
                     }
                 )
 

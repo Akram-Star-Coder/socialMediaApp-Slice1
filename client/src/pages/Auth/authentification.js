@@ -260,7 +260,7 @@ const OTHO = () => {
                       
 
                       <div className="select">
-                        <select name="birthdayDay">
+                        <select name="birthdayDay" onChange={handleChange2}>
                         
                         <option value={currentDay}>{currentDay}</option>
                         {Array.from(
@@ -280,7 +280,7 @@ const OTHO = () => {
                       
 
                       <div className="select">
-                        <select name="birthdayMonth">
+                        <select name="birthdayMonth" onChange={handleChange2}>
                         <option value={currentMonth}>{currentMonth}</option>
                         {months.map((m) => (
                           <option key={m.number} value={m.number}>
@@ -290,7 +290,7 @@ const OTHO = () => {
                         </select>
                       </div>  
                       <div className="select">
-                        <select name="birthdayYear">
+                        <select name="birthdayYear" onChange={handleChange2}>
                         <option value={currentYear}>{currentYear}</option>
                           {
                             years.map((year, i)=>{

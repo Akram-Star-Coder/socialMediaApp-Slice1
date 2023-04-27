@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import { ReactComponent as LoadingIcon } from './Dual Ring-0.8s-389px.svg';
+import Post from './Post';
 
 const Profile = () => {
 
@@ -20,6 +21,26 @@ const Profile = () => {
   const idUrl = id;
 
 
+  useEffect(()=>{
+
+    const getPostByUserIdUrl = async()=>{
+      try{
+        const resp = await axios.get(`http://localhost:3001/post/getAllPostByIdUser/${idUrl}`, {
+          headers : {
+            Authorization : `Bearer ${currentUser.token}`
+          }
+        });
+        if(resp){
+          setUserPosts(resp.data);
+        }
+      }
+      catch(e){
+        console.log(e.message);
+      }
+    }
+    getPostByUserIdUrl();
+
+  }, [idUrl, currentUser.token])
   
 
   
@@ -46,9 +67,6 @@ const Profile = () => {
   }, [currentUser.token, idUrl]);
   
 
-    console.log(userProfile)
-  
-
 
 
   const fctCheck = ()=>{
@@ -66,6 +84,25 @@ const Profile = () => {
   }, [idCookie, idUrl])
   
 
+  function getTimeDifference(isoDateString) {
+    const date = new Date(isoDateString);
+    const currentDate = new Date();
+    const diffTime = Math.abs(currentDate - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const diffYears = Math.ceil(diffDays / 365);
+    const diffMinutes = Math.ceil(diffTime / (1000 * 60));
+  
+    if (diffDays > 365) {
+      return `${diffYears} years ago`;
+    } else if (diffDays > 0) {
+      return `${diffDays} days ago`;
+    } else {
+      return `${diffMinutes} minutes ago`;
+    }
+  } 
+  
+
+  
   return (
     <>
     
@@ -73,25 +110,27 @@ const Profile = () => {
       <Header /> 
       
       <div className="profile">
-        <>
+        <> 
+        
         <LeftSideBar/>
-        {userProfile ?
+        {userProfile ? 
         <div className="profileInfos">
             <div className="coverP">
+              <img className="imageCOCO" src={userProfile.cover? userProfile.cover  :  "https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg"} alt="" />
               <div className="pictureUser">
                 <img src={userProfile.picture ? userProfile.picture : "https://cdn-icons-png.flaticon.com/512/149/149071.png"} alt="" />
               </div>
             </div>
             <div className="fullnamePROFILE">
-                <span className="fullnamePSpan">{userProfile.firstName +" "+ userProfile.lastName}</span>
+                <span className="fullnamePSpan">{ userProfile.firstName+" "+ userProfile.lastName}</span>
                 <hr className="hrProfile" />
 
                 <span className="descriptioNprofile">
-                  <em>I just love javascript !</em> 
+                  <em>{userProfile.description}</em> 
                 </span>
                 {
                   current && (
-                    <>
+                    <> 
                     <div className="editProfile">
                       <button>Edit Account</button>
                     </div>
@@ -102,6 +141,72 @@ const Profile = () => {
                   )
                 }
             </div>
+            <div className="userInfos">
+                
+
+
+                
+                <div className="ui1">
+                {
+                  (userPosts.length === 0)? <em className="ememe"><i className="fa-solid fa-ghost"></i> {  (currentUser._id===userProfile._id ) ? "You haven't created any posts yet" : userProfile.firstName  +"     haven't created any post yet"}</em> : 
+                  
+                  userPosts.map((post, index)=>{
+                    return (
+                      <Post post={post} key={index} />
+                    )
+                  })
+                  
+                }
+                </div>
+
+
+
+
+                <div className="ui2">
+                    <div className="containerui2">
+                      
+                      <h2>User Informations</h2>
+
+                      <div className="emailp">
+                        <div className="optionp">Email</div>
+                        <div className="optionpvalue">{userProfile.email}</div>
+                      </div>
+
+                      <div className="emailp">
+                        <div className="optionp following">Gender</div>
+                        <div className="optionpvalue">{(userProfile.gender === 'Female')? <i className="fa-solid fa-venus"></i>:<i className="fa-solid fa-mars"></i>}</div>
+                      </div>
+
+                      <div className="emailp">
+                        <div className="optionp  following2">Birthday</div>
+                        <div className="optionpvalue ">{userProfile.birthdayDay+'/'+userProfile.birthdayMonth+'/'+userProfile.birthdayYear}</div>
+                      </div>
+
+                      <div className="emailp">
+                        <div className="optionp following">Followers</div>
+                        <div className="optionpvalue">{userProfile.followers.length}</div>
+                      </div>
+
+                      <div className="emailp">
+                        <div className="optionp following">Following</div>
+                        <div className="optionpvalue">{userProfile.following.length}</div>
+                      </div>
+
+                      <div className="emailp">
+                        <div className="optionp following2">Created</div>
+                        <div className="optionpvalue">{userPosts.length >1 && userPosts.length} { (userPosts.length > 1 )? "posts" : (userPosts.length === 0)? "No post" : "post"  }</div>
+                      </div>
+
+                      <div className="emailp">
+                        <div className="optionp following2">Joined</div>
+                        <div className="optionpvalue">{getTimeDifference(userProfile.createdAt)}</div>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+              
+
         </div>
         :
         <div className="loading">

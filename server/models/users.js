@@ -43,6 +43,11 @@ const UserSchema = new mongoose.Schema({
         trim : true, 
         default : ""
     },
+    description :{
+        type : String, 
+        required : false, 
+        default : ""
+    },
     gender : {
         type : String, 
         required : [true, "Gender is Required"], 

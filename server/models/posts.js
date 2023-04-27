@@ -16,7 +16,11 @@ const postsSchema = new mongoose.Schema(
             type : ObjectId, 
             ref : "users", 
             required : true
-        }, 
+        },
+        likes : {
+            type :  [ObjectId],  
+            default : []
+        },
         comments : [
             {
                 comment : {
